@@ -10,6 +10,6 @@ class Ean13
 
     public static function isAllNumber(string $code)
     {
-        return false !== preg_match('/[0-9]+/');
+        return 1 === preg_match('/^[0-9]+$/', $code);
     }
 }
