@@ -1,6 +1,6 @@
 <?php
 
-namespace Zeroplex\;
+namespace Zeroplex;
 
 class Ean13
 {
