@@ -1,0 +1,24 @@
+{
+    "name": "zeroplex/ean13-validator",
+    "type": "library",
+    "description": "Easy helper to check if EAN_13 barcode value is valid",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zero",
+            "email": "john.royer@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7.5",
+        "mockery/mockery": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "zeroplex\\": "src/",
+            "Zeroplex\\Test\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}
