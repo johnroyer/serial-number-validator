@@ -1,0 +1,17 @@
+{
+    "name": "zeroplex/ean13-validator",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^7.5",
+        "mockery/mockery": "^1.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zero",
+            "email": "john.royer@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
