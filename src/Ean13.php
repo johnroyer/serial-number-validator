@@ -12,4 +12,9 @@ class Ean13
     {
         return 1 === preg_match('/^[0-9]+$/', $code);
     }
+
+    public static function isLengthCorrect($code)
+    {
+        return (13 == strlen($code));
+    }
 }
