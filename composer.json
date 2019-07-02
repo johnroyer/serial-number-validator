@@ -20,5 +20,5 @@
             "Zeroplex\\Test\\": "tests/src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
