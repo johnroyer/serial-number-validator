@@ -57,4 +57,45 @@ class ValidatorTest extends TestCase
             ['4711234560011', true],
         ];
     }
+
+    /**
+     * @dataProvider validCodeProvider
+     */
+    public function testChecksumCaculator($input, $expected)
+    {
+        $checksum = Ean13::getCheckSum($input);
+        $lastChar = substr($input, -1, 1);
+
+        $this->assertEquals($checksum, $lastChar);
+    }
+
+    public function validCodeProvider()
+    {
+        return [
+            ['4908569219689', true],
+            ['5690351390155', true],
+            ['4891234567867', true],
+            ['5053177132017', true],
+        ];
+    }
+
+    public function invalidCodeProvider()
+    {
+        return [
+            ['4908569219680', true],
+            ['5690351390150', false],
+            ['4891234567860', false],
+            ['5053177132010', false],
+        ];
+    }
+
+    /**
+     * @dataProvider validCodeProvider
+     */
+    public function testValidatorWithCorrectCode($input, $expected)
+    {
+        $this->assertTrue(
+            Ean13::isValidate($input)
+        );
+    }
 }
