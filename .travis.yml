@@ -1,0 +1,12 @@
+language: php
+
+php:
+    - 7.1
+    - 7.2
+    - 7.3
+
+install:
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+
+script:
+    - vendor/bin/phpunit
