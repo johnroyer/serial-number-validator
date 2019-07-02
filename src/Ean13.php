@@ -4,8 +4,17 @@ namespace Zeroplex;
 
 class Ean13
 {
-    public static function validate(string $code)
+    public static function isValidate(string $code)
     {
+        if (!static::isAllNumber($code)) {
+            return false;
+        }
+        if (!static::isLengthCorrect($code)) {
+            return false;
+        }
+
+        $checksum = static::getCheckSum($code);
+        return $checksum == substr($code, -1, 1);
     }
 
     public static function isAllNumber(string $code)
