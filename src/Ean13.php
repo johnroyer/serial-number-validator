@@ -28,5 +28,9 @@ class Ean13
                 $sum += $code[$i] * 3;
             }
         }
+
+        $dividend = ceil($sum / 10) * 10;
+
+        return abs($dividend - $sum)
     }
 }
