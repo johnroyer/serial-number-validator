@@ -37,4 +37,24 @@ class ValidatorTest extends TestCase
             ['123ABC7890123', false],
         ];
     }
+
+    /**
+     * @dataProvider codeLengthProvider
+     */
+    public function testStringLengthChecker($input, $expected)
+    {
+        $this->assertSame(
+            $expected,
+            Ean13::isLengthCorrect($input)
+        );
+    }
+
+    public function codeLengthProvider()
+    {
+        return [
+            ['4908569219689', true],
+            ['123', false],
+            ['4711234560011', true],
+        ];
+    }
 }
