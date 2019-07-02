@@ -16,9 +16,9 @@
     },
     "autoload": {
         "psr-4": {
-            "zeroplex\\": "src/",
-            "Zeroplex\\Test\\": "tests/"
+            "Zeroplex\\": "src/",
+            "Zeroplex\\Test\\": "tests/src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
