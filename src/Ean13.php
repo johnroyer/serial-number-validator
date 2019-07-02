@@ -18,10 +18,10 @@ class Ean13
         return (13 == strlen($code));
     }
 
-    private static function getCheckSum($code)
+    public static function getCheckSum($code)
     {
         $sum = 0;
-        for ($i = 0; $i < 13; $i++) {
+        for ($i = 0; $i < 12; $i++) {
             if (0 == $i % 2) {
                 $sum += $code[$i] * 1;
             } else {
@@ -31,6 +31,6 @@ class Ean13
 
         $dividend = ceil($sum / 10) * 10;
 
-        return abs($dividend - $sum)
+        return abs($dividend - $sum);
     }
 }
