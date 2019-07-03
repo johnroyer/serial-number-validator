@@ -9,4 +9,8 @@ install:
     - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
 script:
-    - vendor/bin/phpunit
+    - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_sucess:
+    - CODECOV_TOKEN="3cd2107a-3b78-4094-bd57-98bbed054cb0"
+    - bash <(curl -s https://codecov.io/bash)
