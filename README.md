@@ -3,6 +3,15 @@
 This library simpley check if given EAV_13 code is valid.
 
 
+# Installation
+
+use composer to install:
+
+```bash
+composer require zeroplex/ean13-validator
+```
+
+
 # Usage
 
 Validate:
