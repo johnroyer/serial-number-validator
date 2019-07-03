@@ -1,7 +1,5 @@
-# Intro. 
-
+# Introduction
 [![Build Status](https://travis-ci.com/johnroyer/ean13-validator.svg?token=fJExdbHq9iTBYQPwsqRw&branch=master)](https://travis-ci.com/johnroyer/ean13-validator)
-
 [![codecov](https://codecov.io/gh/johnroyer/ean13-validator/branch/master/graph/badge.svg)](https://codecov.io/gh/johnroyer/ean13-validator)
 
 This library simpley check if given EAV_13 code is valid.
