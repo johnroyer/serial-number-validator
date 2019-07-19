@@ -44,4 +44,32 @@ class Ean8Test extends TestCase
             ['0000', false],
         ];
     }
+
+    /**
+     * @dataProvider barcodeCharacterProvider
+     */
+    public function testBarcodeIsOnlyNumbers($in, $exp)
+    {
+        $this->assertSame(
+            $exp,
+            Ean8::isAllNumber($in)
+        );
+    }
+
+    public function barcodeCharacterProvider()
+    {
+        return [
+            ['20123451', true],
+            ['12345670', true],
+            ['49372953', true],
+            ['99999995', true],
+            ['00000000', true],
+
+            ['2a123451', false],
+            ['b2345670', false],
+            ['xxx72953', false],
+            ['ooo99995', false],
+            ['<>000000', false],
+        ];
+    }
 }
