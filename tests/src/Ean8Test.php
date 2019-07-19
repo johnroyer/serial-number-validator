@@ -16,4 +16,32 @@ class Ean8Test extends TestCase
     {
         parent::tearDown();
     }
+
+    /**
+     * @dataProvider barcodeCharacterProvider
+     */
+    public function testLengthChecker($input, $expected)
+    {
+        $this->assertSame(
+            $expected,
+            Ean8::isLengthCorrect($input)
+        );
+    }
+
+    public function barcodeCharacterProvider()
+    {
+        return [
+            ['20123451', true],
+            ['12345670', true],
+            ['49372953', true],
+            ['99999995', true],
+            ['00000000', true],
+
+            ['2012345', false],
+            ['123456970', false],
+            ['4933872953', false],
+            ['999995', false],
+            ['0000', false],
+        ];
+    }
 }
