@@ -18,7 +18,7 @@ class Ean8Test extends TestCase
     }
 
     /**
-     * @dataProvider barcodeCharacterProvider
+     * @dataProvider barcodeLengthProvider
      */
     public function testLengthChecker($input, $expected)
     {
@@ -28,7 +28,7 @@ class Ean8Test extends TestCase
         );
     }
 
-    public function barcodeCharacterProvider()
+    public function barcodeLengthProvider()
     {
         return [
             ['20123451', true],
