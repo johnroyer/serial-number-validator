@@ -20,5 +20,16 @@ class Ean8
 
     public static function getCheckSum($code)
     {
+        $count = [
+            0, // odd
+            0, // even
+        ];
+
+        for ($i = 6; $i >= 0; $i--) {
+            $count[$i % 2] += $code[$i];
+        }
+
+        $tmp = 3 * $count[0] + $count[1];
+        return (10 - ($tmp % 10)) % 10;
     }
 }
