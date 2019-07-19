@@ -5,7 +5,7 @@ namespace Zeroplex\Test;
 use PHPUnit\Framework\TestCase;
 use Zeroplex\Ean13;
 
-class ValidatorTest extends TestCase
+class Ean13Test extends TestCase
 {
     public function setUp(): void
     {
