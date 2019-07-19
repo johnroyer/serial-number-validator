@@ -2,7 +2,7 @@
 
 namespace Zeroplex;
 
-class Ean13
+class Ean8
 {
     public static function isValidate(string $code)
     {
