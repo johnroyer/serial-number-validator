@@ -10,6 +10,7 @@ class Ean8
 
     public static function isAllNumber($code)
     {
+        return 1 === preg_match('/^[0-9]+$/', $code);
     }
 
     public static function isLengthCorrect(string $code)
