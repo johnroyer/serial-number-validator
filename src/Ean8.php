@@ -14,6 +14,7 @@ class Ean8
 
     public static function isLengthCorrect(string $code)
     {
+        return (8 == strlen($code));
     }
 
     public static function getCheckSum($code)
