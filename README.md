@@ -1,6 +1,6 @@
 # Intro. [![Build Status](https://travis-ci.com/johnroyer/ean13-validator.svg?token=fJExdbHq9iTBYQPwsqRw&branch=master)](https://travis-ci.com/johnroyer/ean13-validator)
 
-This library simpley check if given EAV_13 code is valid.
+This library simpley check if given EAN_13 or EAN_8 code is valid.
 
 
 # Installation
