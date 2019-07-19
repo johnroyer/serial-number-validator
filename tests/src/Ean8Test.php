@@ -72,4 +72,29 @@ class Ean8Test extends TestCase
             ['<>000000', false],
         ];
     }
+
+    /**
+     * @dataProvider checksumProider
+     */
+    public function testChecksumCounter($in, $exp)
+    {
+        $counted = Ean8::getCheckSum($in);
+
+        $this->assertSame(
+            $exp,
+            $counted
+        );
+    }
+
+    public function checksumProider()
+    {
+        return [
+            ['20123451', 1],
+            ['12345670', 0],
+            ['49372953', 3],
+            ['99999995', 5],
+            ['00000000', 0],
+            ['12345670', 0],
+        ];
+    }
 }
