@@ -67,4 +67,32 @@ class Isbn13Test extends TestCase
             ['iuh;fr*wfr', false],
         ];
     }
+
+    /**
+     * @dataProvider stringLengthProvider
+     */
+    public function testStringLengthChecker($in, $exp)
+    {
+        $this->assertSame(
+            $exp,
+            Isbn13::isLengthCorrect($in)
+        );
+    }
+
+    public function stringLengthProvider()
+    {
+        return [
+            ['1234567890123', true],
+            ['9789862623893', true],
+            ['9789578787995', true],
+            ['9781640092402', true],
+
+            ['7297465', false],
+            ['758067385', false],
+            ['12675843', false],
+            ['frergh', false],
+            ['498gd932', false],
+            ['iuh;fr*wfr', false],
+        ];
+    }
 }

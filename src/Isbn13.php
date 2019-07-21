@@ -20,6 +20,7 @@ class Isbn13
 
     public static function isLengthCorrect($code)
     {
+        return 13 == strlen($code);
     }
 
     public static function getCheckSum($code)
