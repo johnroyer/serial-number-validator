@@ -82,7 +82,6 @@ class Isbn13Test extends TestCase
     public function stringLengthProvider()
     {
         return [
-            ['1234567890123', true],
             ['9789862623893', true],
             ['9789578787995', true],
             ['9781640092402', true],
@@ -110,13 +109,20 @@ class Isbn13Test extends TestCase
     public function checksumProvider()
     {
         return [
-            ['9789861817286', 6],
             ['9789862623893', 3],
             ['9789578787995', 5],
-            ['9789576581557', 7],
-            ['9789862357613', 3],
-            ['9783836571135', 5],
             ['9781640092402', 2],
         ];
+    }
+
+    /**
+     * @dataProvider stringLengthProvider
+     */
+    public function testIsbnValidator($in, $exp)
+    {
+        $this->assertSame(
+            $exp,
+            Isbn13::isValidate($in)
+        );
     }
 }

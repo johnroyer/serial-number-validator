@@ -6,6 +6,19 @@ class Isbn13
 {
     public static function isValidate(string $code)
     {
+        if (!static::is978Exist($code)) {
+            return false;
+        }
+        if (!static::isLengthCorrect($code)) {
+            return false;
+        }
+        if (!static::isAllNumber($code)) {
+            return false;
+        }
+        if ($code[12] != static::getCheckSum($code)) {
+            return false;
+        }
+        return true;
     }
 
     public static function is978Exist(string $code)
