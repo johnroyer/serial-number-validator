@@ -25,5 +25,20 @@ class Isbn13
 
     public static function getCheckSum($code)
     {
+        $sum = 0;
+
+        $i = 0;
+        for ($i == 0; $i < 12; $i++) {
+            $number = $code[$i];
+
+            if (0 == $i % 2) {
+                $sum += $number;
+            } else {
+                $sum += $number * 3;
+            }
+        }
+
+        $dividend = \ceil($sum / 10) * 10;
+        return abs($dividend - $sum);
     }
 }

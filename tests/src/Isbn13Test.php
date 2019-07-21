@@ -95,4 +95,28 @@ class Isbn13Test extends TestCase
             ['iuh;fr*wfr', false],
         ];
     }
+
+    /**
+     * @dataProvider checksumProvider
+     */
+    public function testChecksumCounter($in, $exp)
+    {
+        $this->assertEquals(
+            $exp,
+            Isbn13::getCheckSum($in)
+        );
+    }
+
+    public function checksumProvider()
+    {
+        return [
+            ['9789861817286', 6],
+            ['9789862623893', 3],
+            ['9789578787995', 5],
+            ['9789576581557', 7],
+            ['9789862357613', 3],
+            ['9783836571135', 5],
+            ['9781640092402', 2],
+        ];
+    }
 }
