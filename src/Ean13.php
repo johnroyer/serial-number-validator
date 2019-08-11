@@ -4,7 +4,7 @@ namespace Zeroplex;
 
 class Ean13
 {
-    public static function isValidate(string $code)
+    public static function isValid(string $code)
     {
         if (!static::isAllNumber($code)) {
             return false;

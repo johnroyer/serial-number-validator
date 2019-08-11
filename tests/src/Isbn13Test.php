@@ -122,7 +122,7 @@ class Isbn13Test extends TestCase
     {
         $this->assertSame(
             $exp,
-            Isbn13::isValidate($in)
+            Isbn13::isValid($in)
         );
     }
 }
