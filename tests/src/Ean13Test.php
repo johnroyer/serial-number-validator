@@ -95,7 +95,7 @@ class Ean13Test extends TestCase
     public function testValidatorWithCorrectCode($input, $expected)
     {
         $this->assertTrue(
-            Ean13::isValidate($input)
+            Ean13::isValid($input)
         );
     }
 }
