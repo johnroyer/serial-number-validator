@@ -4,7 +4,7 @@ namespace Zeroplex;
 
 class Isbn13
 {
-    public static function isValidate(string $code)
+    public static function isValid(string $code)
     {
         if (!static::is978Exist($code)) {
             return false;

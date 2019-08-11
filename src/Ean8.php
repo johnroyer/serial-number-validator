@@ -4,7 +4,7 @@ namespace Zeroplex;
 
 class Ean8
 {
-    public static function isValidate(string $code)
+    public static function isValid(string $code)
     {
     }
 
