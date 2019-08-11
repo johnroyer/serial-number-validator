@@ -2,9 +2,9 @@
 
 namespace Zeroplex;
 
-class TaiwanID
+class TaiwanId
 {
-    public $geoMapping = [
+    public static $geoMapping = [
         'A' => 10,
         'B' => 11,
         'C' => 12,
@@ -35,6 +35,20 @@ class TaiwanID
 
     public function isValid(string $code)
     {
+        if (!static::islengthValid($code)) {
+            var_dump(__LINE__);
+            return false;
+        }
+
+        if (!static::isGeoValid($code)) {
+            var_dump(__LINE__);
+            return false;
+        }
+
+        if ($code[9] != static::getCheckSum($code)) {
+            return false;
+        }
+        return true;
     }
 
     public static function islengthValid(string $code)
@@ -45,7 +59,7 @@ class TaiwanID
         return false;
     }
 
-    public static isMale(string $code)
+    public static function isMale(string $code)
     {
         if ('1' == $code[1]) {
             return true;
@@ -53,21 +67,26 @@ class TaiwanID
         return false;
     }
 
-    public static isGeoValid(string $code)
+    public static function isGeoValid(string $code)
     {
         $char = strtoupper($code[0]);
 
-        return array_key_exists($char, $this->geoMapping);
+        return array_key_exists($char, static::$geoMapping);
     }
 
-    public static getCheckSum(string $code)
+    public static function getCheckSum(string $code)
     {
-        $sum = $this->geoMapping[$code[0]];
+        $prefix = strval(static::$geoMapping[$code[0]]);
+        $sum = $prefix[0] + $prefix[1] * 9;
 
-        for ($i = 0; $i < 9; $i++) {
-            $sum += intval($code[$i + 1]) * (9 - $i);
+        for ($i = 0; $i < 8; $i++) {
+
+            $sum += intval($code[$i + 1]) * (8 - $i);
         }
 
-        return $sum % 10;
+        if (10 == 10 - ($sum % 10)) {
+            return 0;
+        }
+        return 10 - ($sum % 10);
     }
 }
