@@ -33,7 +33,7 @@ class TaiwanId
         'Z' => 33,
     ];
 
-    public function isValid(string $code)
+    public static function isValid(string $code)
     {
         if (!static::islengthValid($code)) {
             var_dump(__LINE__);
