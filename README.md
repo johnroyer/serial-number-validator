@@ -1,6 +1,4 @@
 # Introduction
-[![Build Status](https://travis-ci.com/johnroyer/ean13-validator.svg?token=fJExdbHq9iTBYQPwsqRw&branch=master)](https://travis-ci.com/johnroyer/ean13-validator)
-[![codecov](https://codecov.io/gh/johnroyer/ean13-validator/branch/master/graph/badge.svg)](https://codecov.io/gh/johnroyer/ean13-validator)
 
 This library provider fast code checker for `EAN_13`, `EAN_8`, `ISBN`, `TaiwanID`.
 
